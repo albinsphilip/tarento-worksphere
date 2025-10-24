@@ -7,7 +7,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -86,5 +90,68 @@ public class EmployeeService {
     // Advanced search with multiple filters
     public List<Employee> searchWithFilters(String searchTerm, String department, String status) {
         return employeeRepository.searchWithFilters(searchTerm, department, status);
+    }
+
+    // Get statistics for dashboard
+    public Map<String, Object> getStatistics() {
+        List<Employee> allEmployees = employeeRepository.findAll();
+        Map<String, Object> stats = new HashMap<>();
+
+        // Total employees
+        stats.put("totalEmployees", allEmployees.size());
+
+        // Count by status
+        long activeCount = allEmployees.stream()
+                .filter(e -> "Active".equalsIgnoreCase(e.getStatus()))
+                .count();
+        long inactiveCount = allEmployees.stream()
+                .filter(e -> "Inactive".equalsIgnoreCase(e.getStatus()))
+                .count();
+        long onLeaveCount = allEmployees.stream()
+                .filter(e -> "On Leave".equalsIgnoreCase(e.getStatus()))
+                .count();
+
+        Map<String, Long> statusBreakdown = new HashMap<>();
+        statusBreakdown.put("Active", activeCount);
+        statusBreakdown.put("Inactive", inactiveCount);
+        statusBreakdown.put("On Leave", onLeaveCount);
+        stats.put("statusBreakdown", statusBreakdown);
+
+        // Count by department
+        Map<String, Long> departmentBreakdown = allEmployees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee::getDepartment,
+                        Collectors.counting()
+                ));
+        stats.put("departmentBreakdown", departmentBreakdown);
+
+        // Salary statistics
+        if (!allEmployees.isEmpty()) {
+            double avgSalary = allEmployees.stream()
+                    .filter(e -> e.getSalary() != null)
+                    .mapToDouble(Employee::getSalary)
+                    .average()
+                    .orElse(0.0);
+            
+            double totalSalary = allEmployees.stream()
+                    .filter(e -> e.getSalary() != null)
+                    .mapToDouble(Employee::getSalary)
+                    .sum();
+
+            stats.put("averageSalary", Math.round(avgSalary * 100.0) / 100.0);
+            stats.put("totalSalary", Math.round(totalSalary * 100.0) / 100.0);
+        } else {
+            stats.put("averageSalary", 0.0);
+            stats.put("totalSalary", 0.0);
+        }
+
+        // Recent hires (last 30 days)
+        LocalDate thirtyDaysAgo = LocalDate.now().minusDays(30);
+        long recentHires = allEmployees.stream()
+                .filter(e -> e.getHireDate() != null && e.getHireDate().isAfter(thirtyDaysAgo))
+                .count();
+        stats.put("recentHires", recentHires);
+
+        return stats;
     }
 }

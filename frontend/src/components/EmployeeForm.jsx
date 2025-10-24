@@ -13,7 +13,9 @@ const EmployeeForm = ({ employee, onClose }) => {
     salary: '',
     hireDate: '',
     status: 'Active',
-    address: ''
+    address: '',
+    leaveBalance: 20,
+    leavesTaken: 0
   });
 
   const [errors, setErrors] = useState({});
@@ -31,7 +33,9 @@ const EmployeeForm = ({ employee, onClose }) => {
         salary: employee.salary || '',
         hireDate: employee.hireDate || '',
         status: employee.status || 'Active',
-        address: employee.address || ''
+        address: employee.address || '',
+        leaveBalance: employee.leaveBalance || 20,
+        leavesTaken: employee.leavesTaken || 0
       });
     }
   }, [employee]);
@@ -65,6 +69,14 @@ const EmployeeForm = ({ employee, onClose }) => {
       newErrors.salary = 'Salary is required';
     } else if (formData.salary <= 0) {
       newErrors.salary = 'Salary must be greater than 0';
+    }
+
+    if (formData.leaveBalance < 0) {
+      newErrors.leaveBalance = 'Leave balance cannot be negative';
+    }
+
+    if (formData.leavesTaken < 0) {
+      newErrors.leavesTaken = 'Leaves taken cannot be negative';
     }
 
     setErrors(newErrors);
@@ -250,6 +262,36 @@ const EmployeeForm = ({ employee, onClose }) => {
               rows="3"
               placeholder="Enter full address"
             />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="leaveBalance">Leave Balance (Days)</label>
+            <input
+              type="number"
+              id="leaveBalance"
+              name="leaveBalance"
+              value={formData.leaveBalance}
+              onChange={handleChange}
+              className={errors.leaveBalance ? 'error' : ''}
+              min="0"
+              placeholder="Available leave days"
+            />
+            {errors.leaveBalance && <span className="error-text">{errors.leaveBalance}</span>}
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="leavesTaken">Leaves Taken (Days)</label>
+            <input
+              type="number"
+              id="leavesTaken"
+              name="leavesTaken"
+              value={formData.leavesTaken}
+              onChange={handleChange}
+              className={errors.leavesTaken ? 'error' : ''}
+              min="0"
+              placeholder="Leaves already taken"
+            />
+            {errors.leavesTaken && <span className="error-text">{errors.leavesTaken}</span>}
           </div>
 
           <div className="form-actions">

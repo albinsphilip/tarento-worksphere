@@ -55,4 +55,10 @@ public class Employee {
 
     @Column(name = "address")
     private String address;
+
+    @Column(name = "leave_balance")
+    private Integer leaveBalance; // Available leave days
+
+    @Column(name = "leaves_taken")
+    private Integer leavesTaken; // Leaves taken this year
 }
