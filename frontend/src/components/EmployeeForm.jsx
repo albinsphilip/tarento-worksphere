@@ -222,7 +222,7 @@ const EmployeeForm = ({ employee, onClose }) => {
               onChange={handleChange}
               className={errors.salary ? 'error' : ''}
               min="0"
-              step="0.01"
+              step="0.1"
             />
             {errors.salary && <span className="error-text">{errors.salary}</span>}
           </div>

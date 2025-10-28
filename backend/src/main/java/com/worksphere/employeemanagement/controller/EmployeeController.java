@@ -91,11 +91,4 @@ public class EmployeeController {
         List<Employee> employees = employeeService.getEmployeesByStatus(status);
         return ResponseEntity.ok(employees);
     }
-
-    // Get employee statistics for dashboard
-    @GetMapping("/statistics")
-    public ResponseEntity<Map<String, Object>> getStatistics() {
-        Map<String, Object> statistics = employeeService.getStatistics();
-        return ResponseEntity.ok(statistics);
-    }
 }

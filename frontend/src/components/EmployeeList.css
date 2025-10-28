@@ -1,88 +1,47 @@
 .employee-list-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 32px;
-  min-height: 100vh;
+  padding: 20px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .header h1 {
-  color: #111827;
+  color: #333;
   margin: 0;
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: 1.5rem;
 }
 
-.filters {
+.search-section {
   display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
-.search-box,
-.filter-box {
+.search-input {
   flex: 1;
-  min-width: 220px;
-}
-
-.search-input,
-.filter-select {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  max-width: 400px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   font-size: 14px;
-  transition: all 0.2s ease;
-  background: white;
-  color: #374151;
 }
 
-.search-input:focus,
-.filter-select:focus {
+.search-input:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #007bff;
 }
 
 .results-info {
-  margin: 20px 0;
+  margin: 15px 0;
   color: #666;
-  font-size: 0.9rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.items-per-page {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.items-per-page label {
-  font-weight: 500;
-}
-
-.items-per-page select {
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.info-text {
-  margin-left: 16px;
-  color: #3b82f6;
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 14px;
 }
 
 .employee-table {
@@ -90,241 +49,120 @@
   border-collapse: collapse;
   background: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
-  border: 1px solid #e5e7eb;
 }
 
 .employee-table thead {
-  background: #4CAF50;
+  background: #007bff;
   color: white;
-}
-
-.employee-table th.sortable {
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.2s;
-}
-
-.employee-table th.sortable:hover {
-  background: #45a049;
 }
 
 .employee-table th,
 .employee-table td {
-  padding: 14px 16px;
+  padding: 12px;
   text-align: left;
-  font-size: 0.9rem;
+  border-bottom: 1px solid #eee;
 }
 
-.employee-table th {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.5px;
-  color: white;
-}
-
-.employee-table tbody tr {
-  border-bottom: 1px solid #f3f4f6;
-  transition: all 0.15s ease;
-}
-
-.employee-table tbody tr.clickable-row {
-  cursor: pointer;
-}
-
-.employee-table tbody tr.clickable-row:hover {
-  background: #f0fdf4;
-  transform: scale(1.005);
-  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.15);
-}
-
-.employee-table tbody tr:last-child {
-  border-bottom: none;
-}
-
-.employee-table td {
-  color: #374151;
+.employee-table tbody tr:hover {
+  background: #f8f9fa;
 }
 
 .status-badge {
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 3px;
   font-size: 11px;
-  font-weight: 600;
-  display: inline-block;
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
 }
 
 .status-active {
-  background: #d1fae5;
-  color: #065f46;
+  background: #d4edda;
+  color: #155724;
 }
 
 .status-inactive {
-  background: #fee2e2;
-  color: #991b1b;
+  background: #f8d7da;
+  color: #721c24;
 }
 
 .status-on-leave {
-  background: #fef3c7;
-  color: #92400e;
+  background: #fff3cd;
+  color: #856404;
 }
 
 .actions {
   display: flex;
-  gap: 8px;
+  gap: 5px;
 }
 
 .btn {
-  padding: 9px 16px;
+  padding: 6px 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary {
-  background: #3b82f6;
+  background: #007bff;
   color: white;
 }
 
 .btn-primary:hover {
-  background: #2563eb;
+  background: #0056b3;
 }
 
-.btn-secondary {
-  background: #f3f4f6;
-  color: #374151;
-  border: 1px solid #d1d5db;
+.btn-clear {
+  background: #6c757d;
+  color: white;
 }
 
-.btn-secondary:hover {
-  background: #e5e7eb;
+.btn-clear:hover {
+  background: #545b62;
 }
 
 .btn-edit {
-  background: #3b82f6;
+  background: #28a745;
   color: white;
-  padding: 7px 14px;
 }
 
 .btn-edit:hover {
-  background: #2563eb;
+  background: #1e7e34;
 }
 
 .btn-delete {
-  background: #ef4444;
+  background: #dc3545;
   color: white;
-  padding: 7px 14px;
 }
 
 .btn-delete:hover {
-  background: #dc2626;
+  background: #c82333;
 }
 
 .loading,
-.error {
+.error,
+.no-results {
   text-align: center;
   padding: 40px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .error {
-  color: #f44336;
+  color: #dc3545;
 }
 
-/* Pagination Styles */
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 28px;
-  padding: 20px 0;
+.no-results {
+  color: #6c757d;
 }
 
-.pagination-btn {
-  padding: 8px 14px;
-  border: 1px solid #d1d5db;
-  background: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  color: #374151;
-}
-
-.pagination-btn:hover:not(:disabled) {
-  background: #f9fafb;
-  border-color: #9ca3af;
-}
-
-.pagination-btn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.pagination-numbers {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-.pagination-number {
-  padding: 8px 12px;
-  border: 1px solid #d1d5db;
-  background: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
-  min-width: 38px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  color: #374151;
-}
-
-.pagination-number:hover {
-  background: #f9fafb;
-}
-
-.pagination-number.active {
-  background: #3b82f6;
-  color: white;
-  border-color: #3b82f6;
-}
-
-.pagination-ellipsis {
-  padding: 0 4px;
-  color: #9ca3af;
-  font-weight: 500;
-}
-
-/* Responsive Design */
+/* Simple responsive design */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .filters {
-    flex-direction: column;
-  }
-
-  .search-box,
-  .filter-box {
-    width: 100%;
+    gap: 10px;
   }
 
   .employee-table {
@@ -333,10 +171,6 @@
 
   .employee-table th,
   .employee-table td {
-    padding: 8px 10px;
-  }
-
-  .actions {
-    flex-direction: column;
+    padding: 8px;
   }
 }

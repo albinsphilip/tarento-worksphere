@@ -32,11 +32,6 @@ class EmployeeService {
   searchEmployees(params) {
     return axios.get(`${API_BASE_URL}/search`, { params });
   }
-
-  // Get statistics for dashboard
-  getStatistics() {
-    return axios.get(`${API_BASE_URL}/statistics`);
-  }
 }
 
 export default new EmployeeService();
