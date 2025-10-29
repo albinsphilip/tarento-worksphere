@@ -15,12 +15,13 @@
 /* Sidebar Styles */
 .sidebar {
   width: 260px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   color: #1f2937;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-  border-right: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-right: 1px solid rgba(229, 231, 235, 0.6);
   position: fixed;
   height: 100vh;
   overflow-y: auto;
