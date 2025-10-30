@@ -12,7 +12,7 @@ function App() {
         {/* Sidebar Navigation */}
         <aside className="sidebar">
           <div className="sidebar-header">
-            <h2>🏢 WorkSphere</h2>
+            <h2> WorkSphere </h2>
             <p>Admin Panel</p>
           </div>
           
@@ -21,7 +21,7 @@ function App() {
               className={`nav-item ${activeView === 'dashboard' ? 'active' : ''}`}
               onClick={() => setActiveView('dashboard')}
             >
-              <span className="nav-icon">📊</span>
+              {/* <span className="nav-icon">📊</span> */}
               <span>Dashboard</span>
             </button>
             
@@ -29,14 +29,14 @@ function App() {
               className={`nav-item ${activeView === 'employees' ? 'active' : ''}`}
               onClick={() => setActiveView('employees')}
             >
-              <span className="nav-icon">👥</span>
+              {/* <span className="nav-icon">👥</span> */}
               <span>Employees</span>
             </button>
           </nav>
 
-          <div className="sidebar-footer">
+          {/* <div className="sidebar-footer">
             <p>© 2025 WorkSphere</p>
-          </div>
+          </div> */}
         </aside>
 
         {/* Main Content */}

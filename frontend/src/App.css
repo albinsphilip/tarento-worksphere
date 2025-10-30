@@ -15,9 +15,10 @@
 /* Sidebar Styles */
 .sidebar {
   width: 260px;
-  background: rgba(255, 255, 255, 0.95);
+  /*background: rgba(255, 255, 255, 0.95);*/
+  background: rgb(0, 123, 255,1);
   backdrop-filter: blur(10px);
-  color: #1f2937;
+  /*color: #1f2937;*/
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -36,13 +37,15 @@
   margin: 0;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #111827;
+  /*color: #111827;*/
+  color:white;
 }
 
 .sidebar-header p {
   margin: 6px 0 0 0;
   font-size: 0.8rem;
-  color: #6b7280;
+  /* color: #6b7280; */
+  color:white;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 500;
@@ -58,7 +61,8 @@
   padding: 12px 20px;
   border: none;
   background: transparent;
-  color: #4b5563;
+  /* color: #4b5563; */
+  color:white;
   text-align: left;
   cursor: pointer;
   display: flex;
