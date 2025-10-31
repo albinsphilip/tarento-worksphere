@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import employeeService from '../services/employeeService';
 import EmployeeForm from './EmployeeForm';
+import EmployeeDetails from './EmployeeDetails';
 import './EmployeeList.css';
 
 const EmployeeList = () => {
@@ -12,6 +13,9 @@ const EmployeeList = () => {
   // Form state
   const [showForm, setShowForm] = useState(false);
   const [editingEmployee, setEditingEmployee] = useState(null);
+  
+  // Details state
+  const [viewingEmployee, setViewingEmployee] = useState(null);
   
   // Search state
   const [searchTerm, setSearchTerm] = useState('');
@@ -84,9 +88,14 @@ const EmployeeList = () => {
     setShowForm(true);
   };
 
+  const handleViewDetails = (employee) => {
+    setViewingEmployee(employee);
+  };
+
   const handleFormClose = () => {
     setShowForm(false);
     setEditingEmployee(null);
+    setViewingEmployee(null);
     loadEmployees();
   };
 
@@ -146,7 +155,11 @@ const EmployeeList = () => {
           </thead>
           <tbody>
             {filteredEmployees.map(employee => (
-              <tr key={employee.id}>
+              <tr 
+                key={employee.id}
+                className="clickable-row"
+                onClick={() => handleViewDetails(employee)}
+              >
                 <td>{employee.id}</td>
                 <td>{employee.firstName} {employee.lastName}</td>
                 <td>{employee.email}</td>
@@ -160,13 +173,19 @@ const EmployeeList = () => {
                 <td className="actions">
                   <button
                     className="btn btn-edit"
-                    onClick={() => handleEdit(employee)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleEdit(employee);
+                    }}
                   >
                     Edit
                   </button>
                   <button
                     className="btn btn-delete"
-                    onClick={() => handleDelete(employee.id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDelete(employee.id);
+                    }}
                   >
                     Delete
                   </button>
@@ -182,6 +201,14 @@ const EmployeeList = () => {
         <EmployeeForm
           employee={editingEmployee}
           onClose={handleFormClose}
+        />
+      )}
+
+      {/* Employee Details Modal */}
+      {viewingEmployee && (
+        <EmployeeDetails
+          employee={viewingEmployee}
+          onClose={() => setViewingEmployee(null)}
         />
       )}
     </div>

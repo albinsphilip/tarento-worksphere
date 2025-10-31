@@ -73,6 +73,17 @@
   background: #f8f9fa;
 }
 
+.employee-table tbody tr.clickable-row {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.employee-table tbody tr.clickable-row:hover {
+  background: #e3f2fd;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
+}
+
 .status-badge {
   padding: 3px 8px;
   border-radius: 3px;
