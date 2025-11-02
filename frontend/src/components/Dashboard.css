@@ -2,6 +2,7 @@
   padding: 32px;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #ffffff;
 }
 
 .simple-dashboard h1 {
@@ -27,7 +28,7 @@
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.9);
+  /* background: rgba(255, 255, 255, 0.9); */
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 24px;
@@ -44,9 +45,10 @@
 
 .stat-card h3 {
   margin: 0 0 12px 0;
-  color: #6b7280;
-  font-size: 0.9rem;
-  text-transform: uppercase;
+  /* color: #6b7280; */
+  color:white;
+  font-size: 1.2rem;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
   font-weight: 600;
 }
@@ -55,16 +57,39 @@
   margin: 0;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #111827;
+  /* color: #111827; */
+  color:white;
+}
+
+#card-t-emp{
+  /* background-color: #007bff; */
+  background: linear-gradient(#0066ff, #3399ff);
+}
+
+#card-t-on-leave{
+  /* background-color: #FC8000; */
+  background: linear-gradient(#ff6600, #ff9933);
+}
+
+#card-t-active{
+  /* background-color: #00B261; */
+  /* background: linear-gradient(#00a651, #33cc7d); */
+  background: linear-gradient(#00b261, #33d68f);
+}
+
+#card-t-inactive{
+  /* background-color: #7326EA; */
+  background: linear-gradient(#6619e6, #9c4dff);
 }
 
 /* Departments Section */
 .departments-section {
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(#0066ff, #3399ff);
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 28px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 24px 30px rgba(189, 11, 11, 0.08); */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -96,9 +121,14 @@
 }
 
 .dept-count {
-  color: #2b04d8;
+  /* color: #40d804; */
+  color:#00B261;
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+#depts-text{
+  color:white;
 }
 
 /* Loading and Error States */

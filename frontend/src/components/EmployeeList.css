@@ -32,6 +32,7 @@
   border-radius: 8px;
   font-size: 14px;
   transition: all 0.2s ease;
+  border-color: #b5b2b6;
 }
 
 .search-input:focus {
@@ -79,7 +80,8 @@
 }
 
 .employee-table tbody tr.clickable-row:hover {
-  background: #e3f2fd;
+  /* background: #e3f2fd; */
+  background: rgb(73, 230, 110, 0.3);
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
 }
@@ -174,6 +176,12 @@
 
 .no-results {
   color: #6c757d;
+}
+
+#add-emp-btn{
+  padding:0.7rem;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 /* Simple responsive design */

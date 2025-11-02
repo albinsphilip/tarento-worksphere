@@ -12,7 +12,7 @@ function App() {
         {/* Sidebar Navigation */}
         <aside className="sidebar">
           <div className="sidebar-header">
-            <h2> WorkSphere </h2>
+            <h2> Worksphere </h2>
             <p>Admin Panel</p>
           </div>
           
@@ -34,9 +34,9 @@ function App() {
             </button>
           </nav>
 
-          {/* <div className="sidebar-footer">
-            <p>© 2025 WorkSphere</p>
-          </div> */}
+          <div id="ftr" className="sidebar-footer">
+            <p>© 2025 Albin S Philip</p>
+          </div>
         </aside>
 
         {/* Main Content */}

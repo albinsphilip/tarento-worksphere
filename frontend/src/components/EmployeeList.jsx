@@ -111,7 +111,7 @@ const EmployeeList = () => {
     <div className="employee-list-container">
       <div className="header">
         <h1>Employee Management System</h1>
-        <button className="btn btn-primary" onClick={handleAddNew}>
+        <button id="add-emp-btn" className="btn btn-primary" onClick={handleAddNew}>
           + Add New Employee
         </button>
       </div>

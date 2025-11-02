@@ -4,7 +4,7 @@
 
 .App {
   min-height: 100vh;
-  background: #f8f9fa;
+  background: #faf8f8;
 }
 
 .admin-container {
@@ -16,7 +16,7 @@
 .sidebar {
   width: 260px;
   /*background: rgba(255, 255, 255, 0.95);*/
-  background: rgb(0, 123, 255,1);
+  background-color: #007bff;
   backdrop-filter: blur(10px);
   /*color: #1f2937;*/
   display: flex;
@@ -43,10 +43,10 @@
 
 .sidebar-header p {
   margin: 6px 0 0 0;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   /* color: #6b7280; */
   color:white;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
   font-weight: 500;
 }
@@ -75,12 +75,15 @@
 }
 
 .nav-item:hover {
-  background: #f3f4f6;
-  color: #111827;
+  /* background: #f3f4f6; */
+  background: white;
+  color: #3b82f6;
+  font-weight: 600;
 }
 
 .nav-item.active {
-  background: #eff6ff;
+  /* background: #eff6ff; */
+  background: white;
   border-left-color: #3b82f6;
   color: #2563eb;
   font-weight: 600;
@@ -109,6 +112,10 @@
   padding: 0;
   background: #f8f9fa;
   min-height: 100vh;
+}
+
+#ftr{
+  color:white;
 }
 
 /* Responsive Design */

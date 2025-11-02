@@ -47,29 +47,29 @@ const Dashboard = () => {
       <h1>Dashboard</h1>
       
       <div className="stats-cards">
-        <div className="stat-card">
+        <div id="card-t-emp" className="stat-card">
           <h3>Total Employees</h3>
           <p className="stat-number">{totalEmployees}</p>
         </div>
-        
-        <div className="stat-card">
+
+        <div id="card-t-active" className="stat-card">
           <h3>Active</h3>
           <p className="stat-number">{activeEmployees}</p>
         </div>
-        
-        <div className="stat-card">
+
+        <div id="card-t-on-leave" className="stat-card">
           <h3>On Leave</h3>
           <p className="stat-number">{onLeaveEmployees}</p>
         </div>
-        
-        <div className="stat-card">
+
+        <div id="card-t-inactive" className="stat-card">
           <h3>Inactive</h3>
           <p className="stat-number">{inactiveEmployees}</p>
         </div>
       </div>
 
       <div className="departments-section">
-        <h2>Departments</h2>
+        <h2 id="depts-text">Departments</h2>
         <div className="departments-list">
           {departments.map(dept => {
             const deptCount = employees.filter(emp => emp.department === dept).length;
